@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remember Your Past</title>
+    <link rel="stylesheet" href="../css/output.css">
+    <script src="../../../dist/games/memory-card.js" defer></script>
+</head>
+<body class="w-full min-h-screen grid place-items-center font-fredoka bg-[url('../img/background-memory-cards.png')] bg-cover bg-center bg-no-repeat">
+    <main class="w-full max-w-[600px] min-h-screen flex flex-col items-center justify-center px-4 py-8 gap-6">
+        <div id="startScreen" class="rounded-lg bg-white p-6 text-center shadow-lg">
+            <h1 class="text-3xl font-bold">Memory Card Game</h1>
+            <p class="mt-3">Remember all the road you've taken, and use it to obtain victory!</p> 
+            <ul class="flex flex-col gap-2 mt-2 pl-6 list-disc list-inside">
+                <li>Click one card to flip it open.</li>
+                <li>Click a second card to find its match.</li>
+                <li>If both cards match, they stay open.</li>
+                <li>If they do not match, they flip back.</li>
+                <li>Match all pairs to win the game.</li>
+            </ul>
+            <button id="startButton" class="mt-6 rounded-md bg-emerald-600 px-5 py-2 font-semibold text-white hover:bg-emerald-700">
+                Start Game
+            </button>
+        </div>
+        <div id="gameScreen" class="hidden flex flex-col gap-6">
+            <div class="rounded-lg bg-white p-6 shadow-lg">
+                <h2 class="text-2xl font-semibold">Flip two cards each turn. Match all pairs to win.</h2>
+            </div>
+            <div class="flex flex-wrap items-center justify-between gap-4 rounded-lg bg-white p-4 shadow-lg">
+                <div class="font-semibold">
+                 Moves: <span id="movesCount">0</span>
+                </div>
+
+                <div class="font-semibold">
+                Matches: <span id="matchesCount">0</span>
+                </div>
+
+                <button id="restartButton" class="rounded-md bg-emerald-600 px-4 py-2 font-semibold text-white hover:bg-emerald-700">
+                Restart Game
+                </button>
+            </div>
+
+            <div id="gameBoard" class="grid grid-cols-2 gap-4 sm:grid-cols-4"></div>
+
+            <div class="rounded-lg bg-white p-4 shadow-lg">
+                <p id="message" class="mb-4"></p>
+                <a href="../index.html" class="inline-block rounded-md bg-slate-800 px-4 py-2 font-semibold text-white hover:bg-slate-950">
+                Back to Home
+                </a>
+            </div>
+
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RevoFun</title>
+    <link rel="stylesheet" href="./css/output.css">
+    <script src="../dist/types/index.js" defer></script>
+</head>
+<body class="font-fredoka text-slate-900 selection:bg-emerald-100">
+
+    <div class="fixed inset-0 -z-10 overflow-hidden">
+        <img src="./img/background-homepage.png" alt="homepage background" class="w-full h-full object-cover blur-sm">
+        <div class="absolute inset-0 bg-gradient-to-b from-white/60 to-slate-50/90"></div>
+    </div>
+
+    <header class="flex justify-between items-center px-6 py-4 sticky top-0 bg-white/80 backdrop-blur-md z-50 shadow-sm">
+        <div class="flex items-center gap-2">
+            <img src="./img/logo_revou.png" alt="Revou Logo" class="h-8 w-auto">
+            <span class="font-cal text-2xl tracking-tight text-emerald-600">Fun</span>
+        </div>
+        <nav>
+            <ul class="flex gap-8 font-medium items-center">
+                <li><a href="#home" class="hover:text-emerald-500 transition-colors">Home</a></li>
+                <li class="relative group flex items-center"><a href="#games" class="nav-link hover:text-emerald-500 transition-colors flex items-center gap-1.5 py-2">
+                    Our Games
+                    <svg class="w-4 h-4 text-slate-400 group-hover:text-emerald-500 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </a>
+                    <ul class="absolute left-0 top-full mt-1 w-48 bg-white border border-slate-100 shadow-xl rounded-xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-left scale-95 group-hover:scale-100 z-50">
+                        <li><a href="./games/number-guessing.html" class="block px-4 py-2 rounded-lg hover:bg-emerald-50 text-slate-700 hover:text-emerald-700 transition">The MindReader!</a></li>
+                        <li><a href="./games/rock-paper-scissors.html" class="block px-4 py-2 rounded-lg hover:bg-blue-50 text-slate-700 hover:text-blue-700 transition">The Rock Paper Scissors Gladiator</a></li>
+                        <li><a href="./games/memory-card.html" class="block px-4 py-2 rounded-lg hover:bg-emerald-50 text-slate-700 hover:text-emerald-700 transition">Remember Your Past</a></li>
+                        <li class="border-t border-slate-100 my-1"></li>
+                        <li><a href="#games" class="nav-link block px-4 py-2 rounded-lg hover:bg-slate-100 text-slate-500 italic transition">View All</a></li>
+                    </ul>
+                </li>
+                <li><a href="#aboutus" class="hover:text-emerald-500 transition-colors">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6">
+        
+        <section id="home" class="min-h-[80vh] flex flex-col justify-center items-center text-center py-20">
+            <h1 class="font-cal text-5xl md:text-7xl mb-6 bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text text-transparent">
+                Dedicating Life to Games
+            </h1>
+            <h2 class="max-w-2xl text-lg md:text-xl text-slate-600 leading-relaxed">
+                We are a group of innovative, curious, and persistent people who dedicate our time to crafting the most interactive & enjoyable gaming experiences.
+            </h2>
+        </section>
+
+        <section id="games" class="py-20 border-t border-slate-200">
+            <h2 class="font-cal text-3xl text-center mb-12">Our Games</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <article class="flex flex-col bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-shadow border border-slate-100">
+                    <div class="aspect-video rounded-lg mb-4 overflow-hidden">
+                        <img src="./img/background-number-guessing.png" alt="The MindReader!" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-cal text-xl mb-2">The MindReader!</h3>
+                    <p class="text-slate-600 mb-6 flex-grow">Our Wizard is thinking of a number between 1 and 100. Can you guess the number?</p>
+                    <a href="./games/number-guessing.html" class="inline-flex items-center justify-center px-6 py-2.5 bg-emerald-500 hover:bg-emerald-600 text-white font-bold rounded-full transition-transform active:scale-95 shadow-lg shadow-emerald-200/50">
+                        Let's Play
+                    </a>
+                </article>
+
+                <article class="flex flex-col bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-shadow border border-slate-100">
+                    <div class="aspect-video rounded-lg mb-4 overflow-hidden">
+                        <img src="./img/background-rock-paper-scissors.png" alt="The Rock Paper Scissors Gladiator!" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-cal text-xl mb-2">The Rock Paper Scissors Gladiator</h3>
+                    <p class="text-slate-600 mb-6 flex-grow">Prepare yourself as you face the Gladiators in a battle of Rock, Paper, Scissors!</p>
+                    <a href="./games/rock-paper-scissors.html" class="inline-flex items-center justify-center px-6 py-2.5 bg-emerald-500 hover:bg-emerald-600 text-white font-bold rounded-full transition-transform active:scale-95 shadow-lg shadow-blue-200/50">
+                        Let's Play
+                    </a>
+                </article>
+                <article class="flex flex-col bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-shadow border border-slate-100">
+                    <div class="aspect-video rounded-lg mb-4 overflow-hidden">
+                        <img src="./img/background-memory-cards.png" alt="Remember Your Past" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-cal text-xl mb-2">Remember Your Past</h3>
+                    <p class="text-slate-600 mb-6 flex-grow">Remember all the road you've taken, and use it to obtain victory!</p>
+                    <a href="./games/memory-card.html" class="inline-flex items-center justify-center px-6 py-2.5 bg-emerald-500 hover:bg-emerald-600 text-white font-bold rounded-full transition-transform active:scale-95 shadow-lg shadow-emerald-200/50">
+                        Let's Play
+                    </a>
+                </article>
+
+            </div>
+        </section>
+        <section id="aboutus" class="py-20 flex flex-col items-center text-center bg-white/50 rounded-3xl p-8 md:p-16 mb-20 shadow-inner">
+            <h2 class="font-cal text-3xl mb-6 text-slate-800">About Us</h2>
+            <p class="max-w-3xl text-slate-600 leading-relaxed text-lg">
+                Ready for a revolution? Company A is proud to introduce <span class="text-emerald-600 font-bold">RevoFun</span>, your new home for the web’s most addictive and innovative titles. We know that the heart of gaming is pure, unadulterated fun, which is why we’ve stripped away the clutter to focus on what matters: the play.
+            </p>
+        </section>
+
+    </main>
+    <footer class="py-12 bg-slate-900 text-slate-400 text-center">
+        <p class="text-sm">&#169; 2026 RevoFun. Built with passion for gaming.</p>
+    </footer>
+</body>
+</html>

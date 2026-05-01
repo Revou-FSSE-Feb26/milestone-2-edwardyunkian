@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Rock Paper Scissors Gladiator</title>
+    <link rel="stylesheet" href="../css/output.css">
+    <script type="module" src="../../../dist/games/rock-paper-scissors.js"></script>
+</head>
+<body class="w-full min-h-screen grid place-items-center text-[#222] font-fredoka bg-[url('../img/background-rock-paper-scissors.png')] bg-cover bg-center bg-no-repeat">
+    <div id="damageOverlay" class="fixed inset-0 pointer-events-none bg-red-600/0 z-10"></div>
+    <main class="w-full flex justify-center">
+    <section id="startScreen" class="w-[min(90%,420px)] flex flex-col justify-center gap-6 bg-white p-6 rounded-lg text-center shadow-lg">
+      <h1>The Rock Paper Scissors Gladiator</h1>
+      <p>
+        Prepare yourself as you face the Gladiators in a battle of Rock, Paper, Scissors!<br><br>
+        Each player has 5 lives.<br>Lose a round and you lose one heart.<br>Lose all hearts and you'll perish into nothing.<br><br>
+        The last man standing will win.
+      </p>
+
+      <button id="startButton" class="rounded cursor-pointer bg-emerald-500 px-6 py-3 font-semibold hover:bg-emerald-700">
+        Start Game
+      </button>
+      <a href="../index.html" class="inline-block rounded-md bg-slate-800 px-4 py-2 font-semibold text-white hover:bg-slate-950">
+        Back to Home
+        </a>
+      
+    </section>
+
+    <section id="gameScreen" class="hidden w-[min(94%,600px)] flex flex-col gap-6 bg-white p-6 rounded-lg shadow-lg text-center">
+      <div class="flex flex-col md:flex-row justify-between items-center text-lg">
+        <div class="flex flex-col w-full md:w-48 items-center">
+            <h2>Player: </h2>
+            <span id="livesDisplayPlayer" class="flex justify-center gap-2.5 min-h-[42px] my-4"></span>
+        </div>
+        <p class="text-2xl font-black">VS</p>
+        <div class="flex flex-col w-full md:w-48 items-center">
+            <h2>Opponent: </h2>
+            <span id="livesDisplayComputer" class="flex justify-center gap-2.5 min-h-[42px] my-4"></span>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center gap-6">
+        <h2 class="font-semibold">Choose your weapon:</h2>
+        <div class="flex justify-center gap-4">
+            <button class="choiceButton rounded bg-blue-600 text-white px-4 py-3 hover:bg-blue-700" data-choice="rock">Rock</button>
+            <button class="choiceButton rounded bg-blue-600 text-white px-4 py-3 hover:bg-blue-700" data-choice="paper">Paper</button>
+            <button class="choiceButton rounded bg-blue-600 text-white px-4 py-3 hover:bg-blue-700" data-choice="scissors">Scissors</button>
+        </div>
+      </div>
+      
+      <p id="roundResult" class="text-xl font-semibold"></p>
+      <p id="choicesResult" class="text-2xl font-bold"></p>
+
+        <div>
+        <p id="message"></p>
+        <a href="../index.html" class="inline-block rounded-md bg-slate-800 px-4 py-2 font-semibold text-white hover:bg-slate-950">
+        Back to Home
+        </a>
+        </div>
+
+      <button id="restartButton" class="hidden rounded bg-amber-400 px-6 py-3 font-semibold">
+        Play Again
+      </button>
+    </section>
+  </main>
+</body>
+</html>

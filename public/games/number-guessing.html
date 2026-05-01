@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The MindReader!</title>
+    <link rel="stylesheet" href="../css/output.css">
+    <script type="module" src="../../../dist/games/number-guessing.js"></script>
+</head>
+<body class="w-full min-h-screen grid place-items-center text-[#222] font-fredoka bg-[url('../img/background-number-guessing.png')] bg-cover bg-center bg-no-repeat">
+    <div id="damageOverlay" class="fixed inset-0 pointer-events-none bg-red-600/0 z-10"></div>
+    <main class="w-[min(90%,420px)] flex flex-col bg-white p-6 gap-6 rounded-lg text-center shadow-lg">
+        <h1>The MindReader!</h1>
+        <section id="startScreen" class="flex flex-col gap-6 justify-center text-center">
+            <p>Our Wizard is thinking of a number between 1 and 100. Can you guess the number? If you're ready, press the start button to start the challenge.</p>
+            <button id="startButton" class="rounded cursor-pointer bg-emerald-500 px-6 py-3 font-semibold hover:bg-emerald-700">
+                Start Game
+            </button>
+            <a href="../index.html" class="inline-block rounded-md bg-slate-800 px-6 py-3 font-semibold text-white hover:bg-slate-950">
+                Back to Home
+            </a>
+      
+        </section>
+
+        <section id="gameScreen" class="hidden flex flex-col gap-4 text-center">
+            <p>Guess a number between 1 and 100.</p>
+            <div id="livesDisplay" class="flex justify-center gap-2.5 min-h-[42px] my-4"></div>
+            <div class="grid gap-3 my-5 w-full justify-items-center">
+            <input
+                id="guessedNumber"
+                type="number"
+                min="1"
+                max="100"
+                placeholder="Enter your guess!"
+                class="p-2.5 w-64 border border-gray-300 rounded-md text-center"
+            />
+            <div class="flex gap-4 w-full">
+                <button 
+                    id="guessButton" 
+                    class="flex-1 p-2.5 cursor-pointer border-0 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+                >Guess</button>
+                <button 
+                    id="restartButton"
+                    class="flex-1 p-2.5 cursor-pointer border-0 bg-[#555] text-white rounded-md hover:bg-[#333]"
+                >Restart</button>
+            </div>
+            <p id="message">Make your first guess.</p>
+            <p>Attempts: <span id="attempts">0</span></p>
+            <a href="../index.html" class="inline-block rounded-md bg-slate-800 px-4 py-2 font-semibold text-white hover:bg-slate-950">
+            Back to Home
+            </a>
+
+        </section>
+        
+    </div>
+    </main>
+</body>
+</html>

@@ -74,8 +74,7 @@ https://revou-fsse-feb26.github.io/milestone-2-edwardyunkian/
 │   │   ├── memory-card.html
 │   │   ├── number-guessing.html
 │   │   └── rock-paper-scissors.html
-│   ├── img
-│   └── index.html
+│   └── img
 ├── src
 │   ├── games
 │   │   ├── memory-card.ts
@@ -86,6 +85,7 @@ https://revou-fsse-feb26.github.io/milestone-2-edwardyunkian/
 │   └── utils
 │       └── lives.ts
 ├── .gitignore
+├── index.html
 ├── jest.config.js
 ├── package-lock.json
 ├── package.json

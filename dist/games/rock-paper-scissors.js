@@ -20,10 +20,12 @@ import { renderLives } from "../utils/lives.js";
 import { triggerDamageEffect } from "../utils/lives.js";
 import { loseLife } from "../utils/lives.js";
 const choices = ["rock", "paper", "scissors"];
+// Randomly selects rock, paper, or scissors for the computer by generating random index number for the choice.
 function getComputerChoice() {
     const randomIndex = Math.floor(Math.random() * choices.length);
     return choices[randomIndex];
 }
+// Compares the player's choice with the computer's choice and returns whether the player wins, loses, or draws.
 function getRoundResult(playerChoice, computerChoice) {
     if (playerChoice === computerChoice) {
         return "draw";
@@ -37,6 +39,7 @@ function getRoundResult(playerChoice, computerChoice) {
             return computerChoice === "paper" ? "win" : "lose";
     }
 }
+// Updates player or computer lives based on the round result and triggers visual feedback when a life is lost.
 function updateLives(result) {
     switch (result) {
         case "win":
@@ -56,6 +59,7 @@ function updateLives(result) {
         renderLives(livesDisplayComputer, computerLives, heartImage);
     }, 600);
 }
+// Displays both choices and the result message for the current round.
 function renderRoundMessage(playerChoice, computerChoice, result) {
     choicesResultText.textContent = `You chose ${playerChoice}. Computer chose ${computerChoice}.`;
     switch (result) {
@@ -70,6 +74,7 @@ function renderRoundMessage(playerChoice, computerChoice, result) {
             break;
     }
 }
+// Checks whether either side has no lives left, then disables the buttons and displays the final winner message.
 function checkGameOver() {
     if (playerLives > 0 && computerLives > 0) {
         return;
@@ -86,6 +91,7 @@ function checkGameOver() {
         roundResultText.textContent = "You survived. You win!";
     }
 }
+// Runs one full round: gets the computer choice, decides the result, updates lives, displays messages, and checks if the game is over.
 function playRound(playerChoice) {
     if (playerLives === 0 || computerLives === 0) {
         return;
@@ -103,6 +109,7 @@ choiceButtons.forEach((button) => {
     });
 });
 restartButton.addEventListener("click", restartGame);
+// Restores both players' lives, clears messages, and enables the choice buttons again.
 function restartGame() {
     playerLives = 5;
     computerLives = 5;

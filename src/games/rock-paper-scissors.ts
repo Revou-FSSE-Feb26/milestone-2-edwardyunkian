@@ -31,11 +31,13 @@ import {loseLife} from "../utils/lives.js";
 
 const choices: choice[] = ["rock", "paper", "scissors"];
 
+// Randomly selects rock, paper, or scissors for the computer by generating random index number for the choice.
 function getComputerChoice(): choice {
   const randomIndex = Math.floor(Math.random() * choices.length);
   return choices[randomIndex];
 }
 
+// Compares the player's choice with the computer's choice and returns whether the player wins, loses, or draws.
 function getRoundResult(playerChoice: choice, computerChoice: choice): roundResult {
   if (playerChoice === computerChoice) {
     return "draw";
@@ -53,6 +55,7 @@ function getRoundResult(playerChoice: choice, computerChoice: choice): roundResu
   }
 }
 
+// Updates player or computer lives based on the round result and triggers visual feedback when a life is lost.
 function updateLives(result: roundResult): void {
   switch (result){
     case "win":
@@ -75,6 +78,7 @@ function updateLives(result: roundResult): void {
   }, 600);
 }
 
+// Displays both choices and the result message for the current round.
 function renderRoundMessage(
   playerChoice: choice,
   computerChoice: choice,
@@ -97,6 +101,7 @@ function renderRoundMessage(
   }
 }
 
+// Checks whether either side has no lives left, then disables the buttons and displays the final winner message.
 function checkGameOver(): void {
   if (playerLives > 0 && computerLives > 0) {
     return;
@@ -116,7 +121,7 @@ function checkGameOver(): void {
   }
 }
 
-
+// Runs one full round: gets the computer choice, decides the result, updates lives, displays messages, and checks if the game is over.
 function playRound(playerChoice: choice): void {
   if (playerLives === 0 || computerLives === 0) {
     return;
@@ -139,6 +144,7 @@ choiceButtons.forEach((button) => {
 
 restartButton.addEventListener("click", restartGame);
 
+// Restores both players' lives, clears messages, and enables the choice buttons again.
 function restartGame(): void {
   playerLives = 5;
   computerLives = 5;

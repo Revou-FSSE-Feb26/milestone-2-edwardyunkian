@@ -23,6 +23,7 @@ let flippedCards = [];
 let moves = 0;
 let matches = 0;
 let state = "waiting";
+// Creates pairs of cards from the image list and shuffles them randomly.
 function createCards() {
     const pairedImages = [...cardImages, ...cardImages];
     return pairedImages
@@ -33,6 +34,7 @@ function createCards() {
     }))
         .sort(() => Math.random() - 0.5);
 }
+// Builds the card buttons and displays them on the game board.
 function renderCards() {
     gameBoard.innerHTML = "";
     cards.forEach((card) => {
@@ -56,6 +58,7 @@ function renderCards() {
         gameBoard.appendChild(cardButton);
     });
 }
+// Handles card selection, prevents invalid clicks, and checks for a match after two cards have been flipped.
 function handleCardClick(cardButton) {
     switch (state) {
         case "checking":
@@ -83,6 +86,7 @@ function flipCard(cardButton) {
 function unflipCard(cardButton) {
     cardButton.classList.remove("flipped");
 }
+// Compares the two flipped cards to determine whether they are a matching pair
 function checkForMatch() {
     state = "checking";
     const [firstCard, secondCard] = flippedCards;
@@ -97,6 +101,7 @@ function checkForMatch() {
             break;
     }
 }
+// Keeps matching cards flipped, updates the match count, and ends the game when all pairs have been found.
 function handleMatch(firstCard, secondCard) {
     firstCard.disabled = true;
     secondCard.disabled = true;
@@ -113,6 +118,7 @@ function handleMatch(firstCard, secondCard) {
             break;
     }
 }
+// Temporarily shows mismatched cards, then flips them back after a short delay.
 function handleMismatch(firstCard, secondCard) {
     setTimeout(() => {
         unflipCard(firstCard);
@@ -125,6 +131,7 @@ function updateStats() {
     movesCount.textContent = String(moves);
     matchesCount.textContent = String(matches);
 }
+// Resets the board, counters, flipped cards, and game state for a new round.
 function restartGame() {
     cards = createCards();
     flippedCards = [];

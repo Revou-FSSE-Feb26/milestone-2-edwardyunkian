@@ -36,6 +36,9 @@ The website includes three games:
 - Game restart functionality
 - Visual feedback effects such as heart loss, damage flash, and screen shake
 
+## Live URL
+https://revou-fsse-feb26.github.io/milestone-2-edwardyunkian/
+
 ## Tech Stack
 
 - HTML
